@@ -1,4 +1,4 @@
 # SnapClean
 
 Server and Client 
-**npm start **
+npm start
