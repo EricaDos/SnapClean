@@ -57,7 +57,7 @@ export default function ShowTodo() {
         <TableBody>
           {todosList.map((todo, key) => (
             <TableRow key={key}>
-        
+
               <TableCell align="right">{todo.item}</TableCell>
 
               <TableCell align="right">
