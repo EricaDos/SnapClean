@@ -27,7 +27,7 @@ app.use(cors());
 
 app.use('/jobs', jobRoutes);
 app.use('/todo', todoRoutes);
-app.use('/register', userRoutes);
+app.use('/user', userRoutes);
 
 app.get("/", (req, res) => res.status(200).send("Working SC DB"))
 

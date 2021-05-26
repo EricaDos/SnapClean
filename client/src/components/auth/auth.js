@@ -4,6 +4,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Avatar, Button, Grid, Typography, Container, Paper } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Input from './input';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { signin, signup } from '../../actions/auth';
+import { AUTH } from '../../constants/actionTypes';
+
 
 const useStyles = makeStyles({
   table: {
@@ -11,21 +16,32 @@ const useStyles = makeStyles({
   },
 });
 
+const initialState = { firstName: '', lastName: '' , email: '', password:'', confirmPassword: ''};
 const Auth = () => {
   const classes = useStyles();
   //will determine if logged in based on our variable and changes within our form will update accordingly
 
   const [isSignup, setIsSignup] = useState(false);
-
+  const [formData, setFormData] = useState(initialState);
   const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword)
 
-  const handleSubmit = () => {
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isSignup) {
+      dispatch(signup(formData, history))
+    }else {
+      dispatch(signin(formData, history))
+
+    }
   };
-
-  const handleChange = () => {
+//each input uses handleChange to create our changes on our json file
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
   };
 
