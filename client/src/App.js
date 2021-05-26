@@ -10,6 +10,8 @@ import CreateTodo from './components/createTodo/createTodo.js';
 import Login from './components/login/login.js';
 import SignUp from './components/signup/signup.js';
 
+import Auth from './components/auth/auth.js';
+
 import './App.css';
 import { makeStyles } from '@material-ui/styles';
 
@@ -27,11 +29,9 @@ function App() {
               <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item">
-                    <Link className="nav-link" to={"/sign-in"}>Login</Link>
+                    <Link className="nav-link" to={"/auth"}>Login</Link>
                   </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
-                  </li>
+
                   <li className="nav-item">
                     <Link className="nav-link" to={"/todos"}>ToDo</Link>
                   </li>
@@ -55,6 +55,7 @@ function App() {
               <Route path="/sign-up" component={SignUp} />
               <Route path="/todos" component={CreateTodo} />
               <Route path="/showTodos" component={ShowTodo} />
+              <Route path="/auth" component={Auth} />
 
               <Route path="/jobs" component={Create} />
               <Route path="/showJobs" component={Job} />
