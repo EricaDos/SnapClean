@@ -7,6 +7,9 @@ import cors from 'cors';
 
 //Routers Imported
 import jobRoutes from './routes/job.js';
+import userRoutes from './routes/user.js';
+import todoRoutes from './routes/todo.js';
+
 
 //Initialising the express app
 const app = express();
@@ -23,9 +26,11 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 
 app.use('/jobs', jobRoutes);
-
+app.use('/todo', todoRoutes);
+app.use('/register', userRoutes);
 
 app.get("/", (req, res) => res.status(200).send("Working SC DB"))
+
 
 
 //connecting to database
@@ -44,8 +49,3 @@ mongoose.connect( CONNECTION_URL, {useNewUrlParser: true, useCreateIndex:true, u
 }catch (error) {
   console.log("Could not connect");
 }
-
-
-//Avoid console errors
-
-// mongoose.set('useFindAndModify',false);

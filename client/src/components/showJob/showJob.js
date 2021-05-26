@@ -40,17 +40,18 @@ export default function ShowJob() {
 
 
   return (
+
     <>
-    <h2>All Jobs</h2>
+    <h2>Jobs</h2>
+
+
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell align="right">Service</TableCell>
+            <TableCell align="right">Items</TableCell>
             <TableCell align="right">Description</TableCell>
-            <TableCell align="right">Cleaners Name</TableCell>
-            <TableCell align="right">Hourly Rate</TableCell>
-            <TableCell align="right">Action</TableCell>
+
 
           </TableRow>
         </TableHead>
