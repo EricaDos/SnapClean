@@ -11,6 +11,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import IconButton from '@material-ui/core/Icon';
 import DeleteIcon from '@material-ui/icons/Delete';
+
+
 import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
@@ -36,7 +38,7 @@ export default function CreateTodo() {
 //Function for onClick using axios to communicate with backend
 //Onclick function will call for createTodo function to be triggered from our routes within index.js
   const createTodo = () => {
-    axios.post('http://localhost:5000/todos', todo).then( () => {
+    axios.post('http://localhost:5000/todo', todo).then( () => {
       window.location.reload(false); //automatic reload when new item added
     })
   }
@@ -54,6 +56,8 @@ export default function CreateTodo() {
 
 
       <Button varient="contained" color="primary" onClick={createTodo}> Create Todo </Button>
+
+
 
     </form>
 

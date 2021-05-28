@@ -12,6 +12,7 @@ export const getJobs = async(req, res) => {
 }
 
 
+
 export const createJob = async (req, res) => {
   const job = req.body;
 

@@ -30,6 +30,9 @@ export default function ShowJob() {
     })
   }
 
+
+
+
   useEffect(() => {
     axios.get('http://localhost:5000/jobs').then( (allJobs) => {
       setJobList(allJobs.data);
@@ -49,25 +52,25 @@ export default function ShowJob() {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell align="right">Items</TableCell>
+            <TableCell align="right">Service</TableCell>
             <TableCell align="right">Description</TableCell>
-
-
+            <TableCell align="right">Hourly Rate</TableCell>
+            <TableCell align="right">Delete</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {jobsList.map((job, key) => (
             <TableRow key={key}>
               <TableCell component="th" scope="row">
-                {job.cleanerName}
+                {job.service}
               </TableCell>
-              <TableCell align="right">{job.service}</TableCell>
               <TableCell align="right">{job.description}</TableCell>
               <TableCell align="right">{job.hourlyRate}</TableCell>
               <TableCell align="right">
               <IconButton aria-label="delete" className={classes.margin} onClick={() => deleteJob(job._id)}>
                 <DeleteIcon fontSize="small" />
               </IconButton>
+
 
 
               </TableCell>

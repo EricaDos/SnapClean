@@ -1,10 +1,9 @@
 import mongoose from 'mongoose';
 
 const jobSchema = mongoose.Schema({
-  service: String,
-  cleanerName: String,
-  description: String,
-  hourlyRate: Number,
+  service: {type: String, required: true},
+  description: {type: String, required: true},
+  hourlyRate: {type: Number, required: true},
 });
 
 const job = mongoose.model('job', jobSchema);

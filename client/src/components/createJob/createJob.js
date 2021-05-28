@@ -18,7 +18,6 @@ export default function Create() {
   //React hook and updates data in text field
   const [job, setJob] = useState({
     service: '',
-    cleanerName: '',
     description: '',
     hourlyRate: ''
 
@@ -41,9 +40,7 @@ export default function Create() {
       <TextField id="outlined-basic" label="Job Description" variant="outlined"  value={job.description} onChange={(event) => {
         setJob({ ...job, description: event.target.value})
       }} />
-      <TextField id="outlined-basic" label="Cleaner Name" variant="outlined"  value={job.cleanerName} onChange={(event) => {
-         setJob({ ...job, cleanerName: event.target.value})
-      }} />
+
       <TextField id="outlined-basic" label="Hourly Rate" variant="outlined"  value={job.hourlyRate} onChange={(event) => {
          setJob({ ...job, hourlyRate: event.target.value})
       }} />
@@ -52,7 +49,7 @@ export default function Create() {
 
     </form>
 
-    
+
     </>
   );
 }

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const todoSchema = mongoose.Schema({
-  item: String,
+  item: {type: String, required: true},
 });
 
 const todo = mongoose.model('todo', todoSchema);

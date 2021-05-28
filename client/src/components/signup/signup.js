@@ -5,11 +5,13 @@ export default class SignUp extends Component {
 
     handleSubmit = e => {
       e.preventDefault();
+      // Our data that is being linked to our Schemas
       const data = {
         full_name: this.fullName,
         email: this.emaill,
         password: this.password
       };
+      // axios url and post method being used to input data
       axios.post('http://localhost:5000/signup', data).then(
         res => {
           console.log(res)

@@ -50,6 +50,7 @@ export default function ShowTodo() {
         <TableHead>
           <TableRow>
             <TableCell align="right">Items</TableCell>
+            <TableCell align="right">Delete</TableCell>
 
 
           </TableRow>

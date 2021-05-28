@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+import jwt, { decode } from 'jsonwebtoken';
 //verifying if it's the user
 const auth = async (req, res, next ) => {
   try {
@@ -11,7 +11,7 @@ const auth = async (req, res, next ) => {
       decodedData = jwt.verify(token, 'test');
 
       req.userId = decodedData ?.id;
-    }else {
+    } else {
       decodedData = jwt.decode(token);
 
       req.userId = decodedData ?.sub;
